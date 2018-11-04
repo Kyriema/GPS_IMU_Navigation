@@ -10,9 +10,9 @@ classdef navigation_class < handle
         V_list = [];
         num_time = 0;
         % files;
-        file_node_init = '../data/node_init.txt';
-        file_node_opti = '../data/node_opti.txt';
-        file_edge = '../data/edge.txt';
+        file_node_init = '../data/node_init';
+        file_node_opti = '../data/node_opti';
+        file_edge = '../data/edge';
         % data 
         raw_data = 0;
         time_unit = 0.01;

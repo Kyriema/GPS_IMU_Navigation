@@ -3,7 +3,7 @@ f_handle = fopen(navigation_data.file_node_opti,'r');
 if ~f_handle
     disp("file open error load nodes");
 end
-tline = fgetl(f_handle)
+tline = fgetl(f_handle);
 id_R = 0;
 id_T = 0;
 id_V = 0;

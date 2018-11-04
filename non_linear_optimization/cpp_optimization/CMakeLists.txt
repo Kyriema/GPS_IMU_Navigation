@@ -30,7 +30,8 @@ set(optimization_SOURCE_FILES
         include/paramReader.h
         src/paramReader.cpp
         src/main.cpp
-        include/struct.h src/factors.cpp src/factors.h src/math_utility.cpp src/math_utility.h src/optimizer.cpp src/optimizer.h)
+        include/struct.h src/factors.cpp src/factors.h src/math_utility.cpp src/math_utility.h src/optimizer.cpp src/optimizer.h src/read_node.cpp src/read_node.h
+        )
 
 find_package(Ceres REQUIRED)
 include_directories(${CERES_INCLUDE_DIRS})
@@ -40,3 +41,12 @@ include_directories(${CERES_INCLUDE_DIRS})
 
 add_executable(optimization_GPSIMU ${optimization_SOURCE_FILES})
 target_link_libraries(optimization_GPSIMU ${CERES_LIBRARIES})
+
+###################################test
+set(test_SOURCE_FILES
+        include/paramReader.h
+        src/paramReader.cpp
+        src/test.cpp
+        include/struct.h src/factors.cpp src/factors.h src/math_utility.cpp src/math_utility.h src/optimizer.cpp src/optimizer.h)
+add_executable(test ${test_SOURCE_FILES})
+target_link_libraries(test ${CERES_LIBRARIES})

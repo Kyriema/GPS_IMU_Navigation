@@ -1,12 +1,12 @@
 function [ out_data ] = select_part_of_the_data(in_data)
 % 因爲狀態太多之後不好調試，這裏採用兩個或者三個gps坐標，來弄一個簡單的數據；
 % define a parameters;
-num_select_gps = 2; 
+num_select_gps = 1; 
 % gps part;
 out_data = in_data;
 time_gps_drop = out_data.GNSS.t(num_select_gps);
 out_data.GNSS.t(num_select_gps+1:end) =[];
-out_data.GNSS.VDOP(num_select_gps+:end) = [];
+out_data.GNSS.VDOP(num_select_gps+1:end) = [];
 out_data.GNSS.HDOP(num_select_gps+1:end) = [];
 out_data.GNSS.pos_ned(:,num_select_gps+1:end) = [];
 

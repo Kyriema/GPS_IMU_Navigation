@@ -15,7 +15,10 @@ using namespace std;
 class optimizer {
 public:
     optimizer();
-    void run_optimize(vector< Vector8d>& variable_list, vector< Vector9d> nEdgeLst);
+    void run_optimize(vector< Vector8d>& variables_imu, vector< Vector5d>& variables_R,
+        vector< Vector5d>& variables_T, vector< Vector5d>& variables_V,
+        vector< Vector6d > edge_gps, vector< Vector9d > edge_acc,
+        vector< Vector7d > edge_gyro, vector< Vector5d> edge_motion, vector< Vector5d> edge_speed);
     int id_glocal_to_local(int id_global, int type);
 };
 
