@@ -3,6 +3,8 @@ nfile_data = '../data/GNSSaidedINS_data';
 load(nfile_data);
 % create the node;
 navigation_data = navigation_class();
+% select only part of the data;
+in_data = select_part_of_the_data(in_data);
 navigation_data.num_time = length(in_data.IMU.t);
 num_time = navigation_data.num_time;
 navigation_data.bias = zeros(1,6);
